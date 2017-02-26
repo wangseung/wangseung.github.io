@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "첫 포스트 입니다!"
+date:   2017-02-13 02:00:00 +0900
+categories: general
+---
+첫 포스트 입니다~!
+
+Hello world~~
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
