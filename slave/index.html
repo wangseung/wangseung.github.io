@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Slave</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<script type ="text/javascript">
+		window.onload = function () {
+
+			var x = setInterval(function () { 
+				CountDownTimer('2021/07/17', 'countdown')
+			},50)
+
+			function CountDownTimer(dt, id) {
+				var end = new Date(dt);
+				var _second = 1000;
+				var _minute = _second * 60;
+				var _hour = _minute * 60;
+				var _day = _hour * 24;
+				var timer;
+
+				var now = new Date();
+				var gap = end - now;
+
+				if(gap < 0) {
+					clearInterval(x);
+					document.getElementById(id).innerHTML = 'FINISH!!!!!!!!!!!'
+					return
+				}
+
+				var days = Math.floor(gap/_day);
+				var hours = Math.floor((gap%_day)/_hour);
+				var minutes = Math.floor((gap%_hour)/_minute);
+				var seconds = Math.floor((gap%_minute)/_second);
+				var milliseconds = Math.floor((gap%_second));
+
+				document.getElementById(id).innerHTML = days + '일'
+				document.getElementById(id).innerHTML += hours + '시간'
+				document.getElementById(id).innerHTML += minutes + '분'
+				document.getElementById(id).innerHTML += seconds + '초'
+				document.getElementById(id).innerHTML += milliseconds + ''
+			}
+		}
+	</script>
+</head>
+<body>
+	<p id="countdown"></p>
+</body>
+</html>
