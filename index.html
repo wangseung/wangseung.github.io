@@ -4,6 +4,35 @@
 	<meta charset="utf-8">
 
 	<title>WangSeungHyeon</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" width = "device-width">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/cash/6.0.2/cash.min.js"></script>
+
+	<script>
+		$(function () {
+      function setdatetime() {
+        var dt = new Date();
+        var timeString = dt.getHours().toString() + ":" + dt.getMinutes().toString()
+        var datetime = document.createTextNode(timeString);
+        $('#datetime').text(datetime.nodeValue);
+      }
+      setInterval(function () { 
+        setdatetime();
+			},1000);
+      setdatetime();
+      $('#insta').on("mousedown", function () {
+        var url = "https://www.instagram.com/_wangseung/"
+        // $(location).attr('href', url);
+        location.href = url;
+        // handleEvent(e);
+      });
+		});
+
+    // $('#insta').mousedown(function(e) { 
+    //   alert('Handler for .mousedown() called.'); 
+    //   handleEvent(e);
+    // });
+  </script>
 </head>
 <body>
 hello, world
@@ -15,5 +44,28 @@ my instagram is
 <a href = "https://www.instagram.com/_wangseung/" target="_blank">
 	<img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png">
 </a>
+<div id="phone-center">
+  <div id="phone">
+    <div id="phone-background">
+    </div>
+    <img id="phone-image" src="images/iPHONE.png">
+    <span id="datetime"></span>
+    <div id="phone-menu-background">
+      <div id="phone-menu">
+        <div class="icon-container" id="insta">
+          <img class="phone-app-icon" src="images/insta.png">
+        </div>
+        <div class="icon-container" id="appstore">
+          <img class="phone-app-icon" src="images/appstore.png">
+        </div>
+        <div class="icon-container"></div>
+        <div class="icon-container"></div>
+      </div>
+    </div>
+    <div id="bottom-app-box">
+
+    </div>
+  </div>
+</div>
 </body>
 </html>
